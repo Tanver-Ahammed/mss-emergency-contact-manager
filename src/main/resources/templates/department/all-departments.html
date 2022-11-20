@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>ICT - Alumni Management System</title>
+</head>
+<body>
+
+<section>
+
+    <div class="container">
+        <div class="row row-cols-2">
+            <div th:if="${departmentDTOS.isEmpty()}">
+                <td colspan="3"> No Alumni Available Now!!</td>
+            </div>
+            <div th:each="departmentDTO : ${departmentDTOS}">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${departmentDTO.name}"></h5>
+                        <span th:text="${departmentDTO.startingYear}"></span>
+                        <hr>
+                        <p class="card-text" th:text="${departmentDTO.description}"><span th:text="..."></span></p>
+                        <a th:href="@{${'/department/get/' + departmentDTO.id}}" class="btn btn-primary">Details</a>
+                        <a th:href="@{${'/teacher/registration/' + departmentDTO.id}}" class="btn btn-success">Registration
+                            Teacher</a>
+                        <a th:href="@{${'/teacher/all/by/department/' + departmentDTO.id}}" class="btn btn-info">All
+                            Teachers</a>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <br><br>
+        </div>
+    </div>
+
+</section>
+
+</body>
+</html>

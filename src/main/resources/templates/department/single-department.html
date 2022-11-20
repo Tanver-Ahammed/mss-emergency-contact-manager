@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>ICT - Library Management System</title>
+</head>
+<body>
+
+<section>
+
+
+    <div class="container">
+        <div class="container col-md-10" style="text-align: center">
+
+            <h1 style="text-align: center">Department Details</h1>
+
+            <div class="card">
+                <div class="card-header">
+                    <b><span th:text="${departmentDTO.name}"></span></b>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${departmentDTO.startingYear}"></h5>
+                    <hr>
+                    <p class="card-text" th:text="${departmentDTO.description}">...</p>
+                </div>
+                <a th:href="@{${'/teacher/add/' + departmentDTO.id}}" class="btn btn-success">Add
+                    Teacher</a>
+                <a th:href="@{${'/teacher/all/by/department/' + departmentDTO.id}}" class="btn btn-info">All
+                    Teachers</a>
+            </div>
+
+        </div>
+    </div>
+
+
+</section>
+
+</body>
+</html>

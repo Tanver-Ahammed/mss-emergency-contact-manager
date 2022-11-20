@@ -1,0 +1,24 @@
+package com.contact.manager.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+public class MessageDTO {
+
+    private Long id;
+
+    private TeacherDTO sender;
+
+    private TeacherDTO receiver;
+
+    private String description;
+
+    private String attachment;
+
+}

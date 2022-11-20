@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>ICT - Library Management System</title>
+</head>
+<body>
+
+<section>
+
+
+    <div class="container" style="text-align: center">
+        <div class="container col-md-5" style="text-align: center">
+            <h1 style="text-align: center">Teacher Details</h1>
+            <div class="card" style="width: 40rem; text-align: center">
+                <img th:src="@{${'/image/' + teacherDTO.image}}"
+                     class="single-card-img-top profile-image" alt="Not Available Image">
+                <div class="card-body">
+                    <div style="text-align: left">
+                        <h5 class="card-title" th:text="${'Teacher Name: ' + teacherDTO.name}">
+                        </h5>
+                        <p class="card-title" th:text="${'Teacher Contact: ' + teacherDTO.contact}">
+                        </p>
+                        <u><p class="card-title" th:text="${'Teacher Email: ' + teacherDTO.email}"></p></u>
+                        <p class="card-title" th:text="${'Teacher Designation: ' + teacherDTO.designation}"></p>
+                        <p class="card-title" th:text="${'Teacher Address: ' + teacherDTO.address}"></p>
+                        <p class="card-title" th:text="${'Teacher Maritial Status: ' + teacherDTO.maritalStatus}"></p>
+                        <div class="col-md-3">
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+</body>
+</html>
